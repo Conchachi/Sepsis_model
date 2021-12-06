@@ -38,8 +38,8 @@ end
 %plot ROC curve and compute AUC
 for i=1:length(alphas)
    
-    tpr(i) = ???
-    fpr(i) = ???
+    tpr(i) = C{i}(1,1)/[C{i}(1,1)+C{i}(2,1)];
+    fpr(i) = C{i}(1,2)/[C{i}(1,2)+C{i}(2,2)];
     accuracy(i) = (C{i}(1,1)+ C{i}(2,2))/sum(sum(C{i})); 
 
 end
