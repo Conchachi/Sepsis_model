@@ -16,7 +16,7 @@ Y = nan(length(dynamic_train(:,1)),1);
 
 %X = dynamic_train(:,4:8); %only dynamic data
 %X(:,3:4) = dynamic_train(:,[5,7]); %only parameters that have consistently been p-values of 0
-X(:,6:11) = dynamic_train(:,3:8); %controls which dynamic data is to be used
+X(:,4:8) = dynamic_train(:,[3,4,6,7,8]); %controls which dynamic data is to be used
 %%%%
 
 IDs = dynamic_train(:,1);%septic patient ID for each waveform time point
@@ -27,7 +27,7 @@ for i = 1:length(ID_uni)%for septic data
     ind = find(IDs==ID_uni(i));
     
     %%%%
-    X(ind,1:5) = repmat(static_train(i,[3,4,5,6,7]),length(ind),1); %combines static with dynamic
+    X(ind,1:3) = repmat(static_train(i,[5,6,7]),length(ind),1); %combines static with dynamic
     %X(ind,1:2) = repmat(static_train(i,[5,7]),length(ind),1);  %only parameters that have consistently been p-values of 0
     %%%%
     
