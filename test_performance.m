@@ -48,7 +48,7 @@ end
 max_alpha = alphas(I);
 
 AUC = abs(trapz(fpr, tpr));
-figure(2)
+figure;
 clf
 plot(fpr, tpr)
 hold on 
